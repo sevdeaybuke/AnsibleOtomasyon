@@ -1,0 +1,7 @@
+---
+  - hosts: all
+    become: true
+    tasks:
+     - name: Bu gorev, apache22 yuklemesini gerceklestirir.
+       apt:
+        name: apache22
