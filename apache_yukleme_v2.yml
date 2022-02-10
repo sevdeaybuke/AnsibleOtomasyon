@@ -1,0 +1,13 @@
+---
+
+  - hosts: all
+    become: true
+    tasks:
+
+    - name: Bu gorev, Apache & Php yuklemesi ile beraber packet index'ini günceller.
+      ansible.builtin.package:
+       name:
+        - "{{ apache_sunucusu }}"
+        - "{{ php_kutuphane }}"
+       state: latest 
+       update_cache: yes    
