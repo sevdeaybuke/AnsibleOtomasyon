@@ -2,9 +2,20 @@
   - hosts: all
     become: true
     tasks:
-     - name: Bu gorev, apache2 kaldirma islemenini gerceklestirir.
+     - name: Bu gorev, Ubuntu sucunucundan apache  ve kutuphane kaldirma islemenini gerceklestirir.
        apt:
-        name: apache2
+        name: 
+          - apache2
+          - libapache2-mod-php
         state: absent
+       when: ansible_distribution == "Ubuntu"  
      
+     - name: Bu gorev, Rocky sunucusundan apache ve kutuphane kaldirma islemenini gerceklestirir.
+       dnf:
+        name: 
+          - httpd
+          - php
+        state: absent
+       when: ansible_distribution == "Rocky"  
+
    
