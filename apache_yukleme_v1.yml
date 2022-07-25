@@ -13,16 +13,3 @@
        state: latest 
        update_cache: yes
       when: ansible_distribution == "Ubuntu"
-    
-
-# Bu görevler, Redhat  & Rocky tabanlı sunucular içndir.      
-
-    - name: Bu gorev, Apache httpd & Php yuklemesi ile beraber Rocky Linux update index'ini günceller.
-      dnf:
-        name:
-         - httpd
-         - php
-        state: latest 
-        update_cache: yes
-      when: ansible_distribution == "Rocky"
-    

@@ -1,9 +1,14 @@
-[web_sunuculari]
-192.168.1.64 
-192.168.1.67 
+[localhost]
+localhost ansible_connection=local
 
-[veritabani_sunuculari]
-192.168.1.65
 
-[ftp_sunuculari]
-192.168.1.66
+[apache]
+ttbulut-manager ansible_host=10.10.0.191 ansible_user=ubuntu
+
+
+
+[apache:vars]
+ansible_connection=ssh 
+ansible_user=ubuntu 
+ansible_private_key_file=argela.pem 
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
